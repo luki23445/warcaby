@@ -1,0 +1,61 @@
+.square {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color 0.2s, transform 0.1s;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.square.dark {
+  background-color: #8b4513;
+}
+
+.square.light {
+  background-color: #f0d9b5;
+}
+
+.square.selected {
+  background-color: #4a90e2 !important;
+  box-shadow: inset 0 0 0 4px #2e5c8a;
+}
+
+.square.available {
+  position: relative;
+}
+
+.square.available::before {
+  content: '';
+  position: absolute;
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: rgba(76, 175, 80, 0.6);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+}
+
+.available-marker {
+  width: 30%;
+  height: 30%;
+  border-radius: 50%;
+  background-color: rgba(76, 175, 80, 0.6);
+  box-shadow: 0 0 10px rgba(76, 175, 80, 0.8);
+  animation: pulse 1.5s ease-in-out infinite;
+}
+
+@keyframes pulse {
+  0%, 100% {
+    opacity: 0.6;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 1;
+    transform: scale(1.2);
+  }
+}
+
+.square:active {
+  transform: scale(0.98);
+}
+
